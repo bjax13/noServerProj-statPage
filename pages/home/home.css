@@ -1,0 +1,14 @@
+.main-select-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.select-box{
+  width: 60vw;
+
+}
+.select-box img{
+  width: 100%;
+}
