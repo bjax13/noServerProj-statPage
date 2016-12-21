@@ -8,10 +8,13 @@
   <body>
 
     <nav>
-      <p>Home</p>
-      <p>Team</p>
-      <p>Solo</p>
+      <p ui-sref='home'>Home</p>
+      <p ui-sref='teamStat'>Team</p>
+      <p ui-sref='soloStat'>Solo</p>
     </nav>
+
+    <ui-view>
+    </ui-view>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js" charset="utf-8"></script>
@@ -19,6 +22,7 @@
     <script src="./app.js" charset="utf-8"></script>
     <script src="pages/home/homeCtrl.js" charset="utf-8"></script>
     <script src="pages/teamStat/teamStatCtrl.js" charset="utf-8"></script>
+    <script src="pages/soloStat/soloStatCtrl.js" charset="utf-8"></script>
 
   </body>
 </html>
