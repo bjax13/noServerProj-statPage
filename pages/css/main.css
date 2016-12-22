@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 /*font-family: 'Open Sans', sans-serif;*/
 
+
+
+
 html {
     font-size: 10px;
     text-rendering: optimizeLegibility !important;
@@ -45,6 +48,7 @@ p{
 }
 
 nav{
+  height: 10vh;
   padding: 5px;
   display: flex;
   justify-content: space-around;

@@ -24,7 +24,7 @@ var cachebust = new CacheBuster();
 // });
 
 gulp.task('build-css', [], function () {
-    return gulp.src('pages/**/*.css')
+    return gulp.src(['pages/css/reset.css','pages/**/*.css'])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(cachebust.resources())
@@ -35,7 +35,7 @@ gulp.task('build-css', [], function () {
 
 
 gulp.task('build-js', [], function() {
-   return gulp.src('pages/**/*.js')
+   return gulp.src(['./app.js','pages/**/*.js'])
       .pipe(sourcemaps.init())
       .pipe(print())
       .pipe(babel({ presets: ['es2015'] }))
@@ -52,5 +52,5 @@ gulp.task('build', [ 'build-css', 'build-js'], function() {
 });
 
 gulp.task('watch', function() {
-    return gulp.watch(['./index.html','./partials/*.html', './styles/*.*css', './js/**/*.js'], ['build']);
+    return gulp.watch(['./index.html','./pages/**/*.html', './pages/**/*.css', './pages/**/*.js'], ['build']);
 });
