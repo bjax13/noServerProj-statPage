@@ -9,12 +9,12 @@
     //babel-preset-es2015
     */
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps');
-
-var CacheBuster = require('gulp-cachebust');
-var cachebust = new CacheBuster();
+// var gulp = require('gulp'),
+//     sass = require('gulp-sass'),
+//     sourcemaps = require('gulp-sourcemaps');
+//
+// var CacheBuster = require('gulp-cachebust');
+// var cachebust = new CacheBuster();
 
 
 // gulp.task('clean', function (cb) {
@@ -35,14 +35,14 @@ var cachebust = new CacheBuster();
 
 
 // gulp.task('build-js', ['clean'], function() {
-//    return gulp.src('js/**/*.js')               
+//    return gulp.src('js/**/*.js')
     //   .pipe(sourcemaps.init())
-    //   .pipe(print())                        
+    //   .pipe(print())
     //   .pipe(babel({ presets: ['es2015'] }))
     //   .pipe(concat('bundle.js'))
     //   //.pipe(uglify())
-    //   .pipe(sourcemaps.write('./')) 
-    //   .pipe(gulp.dest('./dist/js')); 
+    //   .pipe(sourcemaps.write('./'))
+    //   .pipe(gulp.dest('./dist/js'));
 // });
 
 // gulp.task('build', [ 'clean', 'build-css', 'build-js'], function() {

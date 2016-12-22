@@ -1,29 +1,41 @@
-var gulp = require('gulp')
-  , concat = require('gulp-concat')
-  , sass = require('gulp-sass')
-  , sourcemaps = require('gulp-sourcemaps')
-  , print = require('gulp-print')
-  , babel = require('gulp-babel');
+var gulp = require('gulp'),
+    del = require('del'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    print = require('gulp-print'),
+    babel = require('gulp-babel');
+    //babel-preset-es2015
 
-  var Cashebuster = require('gulp-cachebust')
-  var cachebust = new Cashebuster();
 
-gulp.task('hello', function () {
-  console.log("hello everyone!");
-})
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('build-css', function () {
-  return gulp.src('./styles/*')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(cachebust.resources())
-    .pipe(concat('styles.css'))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./dist'));
-})
+var CacheBuster = require('gulp-cachebust');
+var cachebust = new CacheBuster();
+
+
+// gulp.task('clean', function (cb) {
+//     del([
+//         'dist'
+//     ], cb);
+// });
+
+gulp.task('build-css', [], function () {
+    return gulp.src('pages/**/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(cachebust.resources())
+        .pipe(concat('styles.css'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./dist'));
+});
+
 
 gulp.task('build-js', [], function() {
-   return gulp.src('js/**/*.js')
+   return gulp.src('pages/**/*.js')
       .pipe(sourcemaps.init())
       .pipe(print())
       .pipe(babel({ presets: ['es2015'] }))
@@ -33,10 +45,10 @@ gulp.task('build-js', [], function() {
       .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('build', ['build-css', 'build-js'], function() {
+gulp.task('build', [ 'build-css', 'build-js'], function() {
     return gulp.src('index.html')
         .pipe(cachebust.references())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('watch', function() {
