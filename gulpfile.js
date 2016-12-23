@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     del = require('del'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
+    //uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     print = require('gulp-print'),
     babel = require('gulp-babel');
@@ -17,11 +17,7 @@ var CacheBuster = require('gulp-cachebust');
 var cachebust = new CacheBuster();
 
 
-// gulp.task('clean', function (cb) {
-//     del([
-//         'dist'
-//     ], cb);
-// });
+
 
 gulp.task('build-css', [], function () {
     return gulp.src(['pages/css/reset.css','pages/**/*.css'])
