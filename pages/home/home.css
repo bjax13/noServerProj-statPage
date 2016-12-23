@@ -12,10 +12,14 @@
   align-items: center;
   flex-direction: column;
   width: 60vw;
-
+  border-style: solid;
+  border-width: thick;
+  border-color: #ccc;
+  padding: 5px;
+  border-radius: 25px;
 }
 .select-box-title{
-  margin-bottom: 20px
+  margin-bottom: 0px
 }
 .select-box img{
   width: 100%;

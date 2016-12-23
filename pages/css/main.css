@@ -50,10 +50,30 @@ p{
 
 nav{
   height: 10vh;
-  padding: 5px;
+
+}
+.full-nav{
   display: flex;
   justify-content: space-around;
+  align-content: center;
+  display: none;
+  background-color: #262729;
 }
+.logo-nav{
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+}
+.logo-nav-img{
+  width: 8vh;
+  background-color: #303133;
+}
+.logo-nav-img img{
+  max-width:100%;
+  height:auto;
+}
+
+
 .backgroundColor{
   background: #303133;
 }
