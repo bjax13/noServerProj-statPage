@@ -8,7 +8,11 @@ angular.module('statApp')
         url: 'https://www.codewars.com/api/v1/users/bjack13'
         // DA2K-3FnsohzhzAp7xvQ codewars auth key
       }).then(function (response) {
-        defer.resolve(response.data)
+        console.log(response.data);
+        defer.resolve({
+          userName: response.data.username,
+          summaryImg:'https://www.codewars.com/users/'+ response.data.username +'/badges/large'
+        })
       })
 
       return defer.promise;
