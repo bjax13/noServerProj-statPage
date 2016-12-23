@@ -9,20 +9,21 @@
 
 
   </head>
-  <body class="backgroundColor">
+  <body class="backgroundColor" ng-controller="mainCtrl">
 
-    <nav class="full-nav">
+    <nav class="full-nav" ng-show="displayNav" ng-click="toggleNav()">
       <h1 ui-sref='home'>Home</h1>
       <h1 ui-sref='teamStat'>Team</h1>
       <h1 ui-sref='soloStat'>Solo</h1>
     </nav>
-    <nav class="logo-nav">
+    <nav class="logo-nav" ng-hide='displayNav' ng-click="toggleNav()">
 
       <div class="logo-nav-img">
-        <img src="images/Statis_logo.png" alt="stat logo" >
+        <img src="images/Ham.png" alt="stat logo">
       </div>
 
     </nav>
+
 
     <ui-view>
     </ui-view>

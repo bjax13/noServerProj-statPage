@@ -20,17 +20,11 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
+angular.module('statApp').service('mainSvc', function () {});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
   $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-      console.log(response);
-      $scope.soloUser = response;
-    });
-  };
-
-  $scope.coderInfo();
 });
 'use strict';
 
@@ -67,12 +61,31 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 });
 'use strict';
 
-angular.module('statApp').controller('homeCtrl', function ($scope) {
+angular.module('statApp').controller('teamStatCtrl', function ($scope) {
   $scope.test = "It is alive!!";
 });
 'use strict';
 
-angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
   $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+      console.log(response);
+      $scope.soloUser = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
+'use strict';
+
+angular.module('statApp').controller('mainCtrl', function ($scope, mainSvc) {
+
+  $scope.displayNav = false;
+
+  $scope.toggleNav = function () {
+    $scope.displayNav = !$scope.displayNav;
+  };
 });
 //# sourceMappingURL=bundle.js.map
