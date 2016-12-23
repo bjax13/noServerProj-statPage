@@ -61,11 +61,6 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 });
 'use strict';
 
-angular.module('statApp').controller('teamStatCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
   $scope.test = "It is alive!!";
 
@@ -77,6 +72,11 @@ angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsS
   };
 
   $scope.coderInfo();
+});
+'use strict';
+
+angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 
