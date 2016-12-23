@@ -25,6 +25,20 @@ angular.module('statApp').controller('homeCtrl', function ($scope) {
 });
 'use strict';
 
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+      console.log(response);
+      $scope.soloUser = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
+'use strict';
+
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -37,7 +51,13 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
       console.log(response.data);
       defer.resolve({
         userName: response.data.username,
-        summaryImg: 'https://www.codewars.com/users/' + response.data.username + '/badges/large'
+        summaryImg: 'https://www.codewars.com/users/' + response.data.username + '/badges/large',
+        clan: response.data.clan,
+        honor: response.data.honor,
+        leaderboardPosition: response.data.leaderboardPosition,
+        overallRank: response.data.ranks.overall,
+        skills: response.data.skills,
+        challangeCompleted: response.data.codeChallenges.totalCompleted
       });
     });
 
@@ -55,20 +75,6 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
   //     })
   //     return defer.promise;
   //   }
-});
-'use strict';
-
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-      console.log(response);
-      $scope.soloUser = response;
-    });
-  };
-
-  $scope.coderInfo();
 });
 'use strict';
 

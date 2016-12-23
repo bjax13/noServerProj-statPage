@@ -11,7 +11,13 @@ angular.module('statApp')
         console.log(response.data);
         defer.resolve({
           userName: response.data.username,
-          summaryImg:'https://www.codewars.com/users/'+ response.data.username +'/badges/large'
+          summaryImg:'https://www.codewars.com/users/'+ response.data.username +'/badges/large',
+          clan: response.data.clan,
+          honor: response.data.honor,
+          leaderboardPosition: response.data.leaderboardPosition,
+          overallRank: response.data.ranks.overall,
+          skills: response.data.skills,
+          challangeCompleted: response.data.codeChallenges.totalCompleted,
         })
       })
 
