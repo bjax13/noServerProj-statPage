@@ -15,10 +15,10 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Lora', serif;
 }
 h1,h3{
-  color: #272727;
+  color: #fff;
 }
 h4,h6{
-  color: #232323;
+  color: #fff;
 }
 h2,h3{
   font-size: 2.8rem;
@@ -33,7 +33,7 @@ h1{
     line-height: 4.6rem;
  }
 h2{
-    color: #000;
+    color: #fff;
 }
 h4{
      font-size: 1.98rem;
@@ -52,4 +52,7 @@ nav{
   padding: 5px;
   display: flex;
   justify-content: space-around;
+}
+.backgroundColor{
+  background: #303133;
 }

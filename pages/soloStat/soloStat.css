@@ -12,3 +12,9 @@
 .upperCase{
   text-transform: uppercase;
 }
+.codewars-summary-stats{
+  width: 100%;
+}
+.codewars-summary-stats img{
+  width: 100%;
+}
