@@ -88,13 +88,18 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 });
 'use strict';
 
+angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
   $scope.test = "It is alive!!";
 
   $scope.coderInfo = function () {
     codewarsSvc.coderInfo().then(function (response) {
-      console.log(response.username);
-      $scope.gitInfo(response.username);
+      console.log(response.userName);
+      $scope.gitInfo("bjax13");
       $scope.soloUser = response;
     });
   };
@@ -107,11 +112,6 @@ angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsS
   };
 
   $scope.coderInfo();
-});
-'use strict';
-
-angular.module('statApp').controller('teamStatCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
 });
 'use strict';
 
