@@ -37,7 +37,7 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
       url: 'https://www.codewars.com/api/v1/users/bjack13'
       // DA2K-3FnsohzhzAp7xvQ codewars auth key
     }).then(function (response) {
-      console.log(response.data);
+
       var dataObj = {
         userName: response.data.username,
         summaryImg: 'https://www.codewars.com/users/' + response.data.username + '/badges/large',
@@ -48,7 +48,7 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
         skills: response.data.skills,
         challangeCompleted: response.data.codeChallenges.totalCompleted
       };
-      console.log(dataObj.skills);
+
       if (dataObj.skills === null) {
         dataObj.skills = 'No skills displayed on CodeWars.com';
       }
@@ -61,13 +61,48 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 });
 'use strict';
 
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc) {
+angular.module('statApp').service('githubSvc', function ($http, $q) {
+
+  this.gitInfo = function (user) {
+    var defer = $q.defer();
+    $http({
+      method: 'GET',
+      url: 'https://api.github.com/search/users?q=' + user + '+in:%3Elogin'
+      // DA2K-3FnsohzhzAp7xvQ codewars auth key
+    }).then(function (response) {
+      console.log(response);
+
+      // var dataObj = {
+      //
+      // }
+      // console.log(dataObj.skills);
+      // if (dataObj.skills === null) {
+      //   dataObj.skills = 'No skills displayed on CodeWars.com'
+      // }
+
+      defer.resolve(response);
+    });
+
+    return defer.promise;
+  };
+});
+'use strict';
+
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
   $scope.test = "It is alive!!";
 
   $scope.coderInfo = function () {
     codewarsSvc.coderInfo().then(function (response) {
-      console.log(response);
+      console.log(response.username);
+      $scope.gitInfo(response.username);
       $scope.soloUser = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+    console.log(user);
+    githubSvc.gitInfo(user).then(function (response) {
+      console.log(response);
+      $scope.soloUserGit = response;
     });
   };
 

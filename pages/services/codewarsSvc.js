@@ -8,7 +8,7 @@ angular.module('statApp')
         url: 'https://www.codewars.com/api/v1/users/bjack13'
         // DA2K-3FnsohzhzAp7xvQ codewars auth key
       }).then(function (response) {
-        console.log(response.data);
+
         var dataObj = {
           userName: response.data.username,
           summaryImg:'https://www.codewars.com/users/'+ response.data.username +'/badges/large',
@@ -19,7 +19,7 @@ angular.module('statApp')
           skills: response.data.skills,
           challangeCompleted: response.data.codeChallenges.totalCompleted,
         }
-        console.log(dataObj.skills);
+        
         if (dataObj.skills === null) {
           dataObj.skills = 'No skills displayed on CodeWars.com'
         }
