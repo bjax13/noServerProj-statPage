@@ -23,6 +23,11 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -81,11 +86,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 
     return defer.promise;
   };
-});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
 });
 'use strict';
 

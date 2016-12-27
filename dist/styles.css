@@ -164,5 +164,17 @@ nav {
 .codewars-summary-stats img {
   width: 100%; }
 
+.gitHub-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.gitHub-summary-stats {
+  width: 80vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; }
+
 
 /*# sourceMappingURL=maps/styles.css.map */
