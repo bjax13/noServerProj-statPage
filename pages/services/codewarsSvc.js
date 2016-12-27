@@ -8,6 +8,7 @@ angular.module('statApp')
         url: 'https://www.codewars.com/api/v1/users/bjack13'
         // DA2K-3FnsohzhzAp7xvQ codewars auth key
       }).then(function (response) {
+        console.log(response);
 
         var dataObj = {
           userName: response.data.username,
@@ -19,9 +20,16 @@ angular.module('statApp')
           skills: response.data.skills,
           challangeCompleted: response.data.codeChallenges.totalCompleted,
         }
-        
+
         if (dataObj.skills === null) {
           dataObj.skills = 'No skills displayed on CodeWars.com'
+        }else {
+          var skillString = ''
+          for (var i = 0; i < dataObj.skills.length; i++) {
+
+            skillString+= dataObj.skills[i] + " "
+          }
+          dataObj.skills = skillString;
         }
 
 

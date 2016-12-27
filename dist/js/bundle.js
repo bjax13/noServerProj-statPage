@@ -28,6 +28,28 @@ angular.module('statApp').controller('homeCtrl', function ($scope) {
 });
 'use strict';
 
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+
+      $scope.gitInfo("bjax13");
+      $scope.soloUser = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+
+    githubSvc.gitInfo(user).then(function (response) {
+      console.log(response);
+      $scope.soloUserGit = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
+'use strict';
+
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -37,6 +59,7 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
       url: 'https://www.codewars.com/api/v1/users/bjack13'
       // DA2K-3FnsohzhzAp7xvQ codewars auth key
     }).then(function (response) {
+      console.log(response);
 
       var dataObj = {
         userName: response.data.username,
@@ -51,6 +74,13 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
       if (dataObj.skills === null) {
         dataObj.skills = 'No skills displayed on CodeWars.com';
+      } else {
+        var skillString = '';
+        for (var i = 0; i < dataObj.skills.length; i++) {
+
+          skillString += dataObj.skills[i] + " ";
+        }
+        dataObj.skills = skillString;
       }
 
       defer.resolve(dataObj);
@@ -86,28 +116,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 
     return defer.promise;
   };
-});
-'use strict';
-
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-
-      $scope.gitInfo("bjax13");
-      $scope.soloUser = response;
-    });
-  };
-  $scope.gitInfo = function (user) {
-
-    githubSvc.gitInfo(user).then(function (response) {
-      console.log(response);
-      $scope.soloUserGit = response;
-    });
-  };
-
-  $scope.coderInfo();
 });
 'use strict';
 
