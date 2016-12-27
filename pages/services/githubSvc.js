@@ -2,7 +2,7 @@ angular.module('statApp')
   .service('githubSvc',function ($http, $q) {
 
 
-    
+
 
     this.gitInfo = function (user) {
       var defer = $q.defer();
@@ -17,7 +17,10 @@ angular.module('statApp')
 
         var dataObj = {
           avatarUrl: response.data.items[0].avatar_url,
-          gitUrl: response.data.items[0].url,
+          gitApiUrl: response.data.items[0].url,
+          login: response.data.items[0].login,
+          gitProfileLink: response.data.items[0].html_url,
+          gitSummaryImg: "http://ghchart.rshah.org/" + response.data.items[0].login,
 
         }
 

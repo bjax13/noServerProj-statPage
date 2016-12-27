@@ -23,11 +23,6 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -74,7 +69,10 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 
       var dataObj = {
         avatarUrl: response.data.items[0].avatar_url,
-        gitUrl: response.data.items[0].url
+        gitApiUrl: response.data.items[0].url,
+        login: response.data.items[0].login,
+        gitProfileLink: response.data.items[0].html_url,
+        gitSummaryImg: "http://ghchart.rshah.org/" + response.data.items[0].login
 
       };
 
@@ -83,6 +81,11 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 
     return defer.promise;
   };
+});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 
