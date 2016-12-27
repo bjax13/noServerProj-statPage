@@ -23,11 +23,6 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -70,17 +65,15 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
       url: 'https://api.github.com/search/users?q=' + user + '+in:%3Elogin'
       // DA2K-3FnsohzhzAp7xvQ codewars auth key
     }).then(function (response) {
-      console.log(response);
+      console.log(response.data.items[0]);
 
-      // var dataObj = {
-      //
-      // }
-      // console.log(dataObj.skills);
-      // if (dataObj.skills === null) {
-      //   dataObj.skills = 'No skills displayed on CodeWars.com'
-      // }
+      var dataObj = {
+        avatarUrl: response.data.items[0].avatar_url,
+        gitUrl: response.data.items[0].url
 
-      defer.resolve(response);
+      };
+
+      defer.resolve(dataObj);
     });
 
     return defer.promise;
@@ -88,7 +81,7 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 });
 'use strict';
 
-angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+angular.module('statApp').controller('homeCtrl', function ($scope) {
   $scope.test = "It is alive!!";
 });
 'use strict';
@@ -98,13 +91,13 @@ angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsS
 
   $scope.coderInfo = function () {
     codewarsSvc.coderInfo().then(function (response) {
-      console.log(response.userName);
+
       $scope.gitInfo("bjax13");
       $scope.soloUser = response;
     });
   };
   $scope.gitInfo = function (user) {
-    console.log(user);
+
     githubSvc.gitInfo(user).then(function (response) {
       console.log(response);
       $scope.soloUserGit = response;
@@ -112,6 +105,11 @@ angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsS
   };
 
   $scope.coderInfo();
+});
+'use strict';
+
+angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 

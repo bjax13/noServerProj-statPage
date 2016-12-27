@@ -8,17 +8,16 @@ angular.module('statApp')
         url: `https://api.github.com/search/users?q=${user}+in:%3Elogin`
         // DA2K-3FnsohzhzAp7xvQ codewars auth key
       }).then(function (response) {
-        console.log(response);
+        console.log(response.data.items[0]);
 
-        // var dataObj = {
-        //
-        // }
-        // console.log(dataObj.skills);
-        // if (dataObj.skills === null) {
-        //   dataObj.skills = 'No skills displayed on CodeWars.com'
-        // }
+        var dataObj = {
+          avatarUrl: response.data.items[0].avatar_url,
+          gitUrl: response.data.items[0].url,
 
-        defer.resolve(response)
+        }
+
+
+        defer.resolve(dataObj)
       })
 
       return defer.promise;

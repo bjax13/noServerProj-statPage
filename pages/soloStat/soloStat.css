@@ -9,6 +9,9 @@
   flex-direction: column;
   align-items: center;
 }
+.profile-img img{
+  border-radius: 15px;
+}
 .upperCase{
   text-transform: uppercase;
 }
