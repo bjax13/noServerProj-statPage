@@ -4,9 +4,9 @@ angular.module('statApp')
 
     $scope.coderInfo = function () {
       codewarsSvc.coderInfo().then(function (response) {
-        
+
         $scope.gitInfo("bjax13");
-        $scope.soloUser = response;
+        $scope.soloUserCodeWars = response;
       })
     }
     $scope.gitInfo = function (user) {

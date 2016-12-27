@@ -1,25 +1,29 @@
 <div class="main-solo-stat">
   <div class="user-info">
     <div class="profile-img">
-      <img src="https://avatars.githubusercontent.com/u/16809504?v=3" alt="profile picture">
+      <img ng-src="{{soloUserGit.avatarUrl}}" alt="profile picture">
     </div>
-    <h4 class="upperCase">{{soloUser.userName}}</h4>
-    <h4>Bio</h4>
-    <h5>Clan: {{soloUser.clan}}</h5>
+    <h4 class="upperCase">{{soloUserCodeWars.userName}}</h4>
+    <br>
+    <h5>Clan: {{soloUserCodeWars.clan}}</h5>
     <div class="bio-box">
-      <p>CodeWars Skills: {{soloUser.skills}}</p>
+      <div class="bio-box-textbox">
+        <p>CodeWars Skills: {{soloUserCodeWars.skills}}</p>
+      </div>
     </div>
   </div>
+  <br>
   <div class="codewars-stats">
     <h2>CodeWars Stats</h2>
     <div class="codewars-summary-stats">
-      <img ng-src="{{soloUser.summaryImg}}" alt="Summary Stats">
+      <img ng-src="{{soloUserCodeWars.summaryImg}}" alt="Summary Stats">
     </div>
   </div>
+  <br>
   <div class="gitHub-stats">
     <h2>GitHub Stats</h2>
     <div class="gitHub-summary-stats">
-      <img src="http://ghchart.rshah.org/B92F21/bjax13" alt={{soloUser.userName}} "Github chart" />
+      <img src="http://ghchart.rshah.org/B92F21/bjax13" alt={{soloUserCodeWars.userName}} "Github chart" />
     </div>
   </div>
 </div>

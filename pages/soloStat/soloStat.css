@@ -15,6 +15,45 @@
 .upperCase{
   text-transform: uppercase;
 }
+.bio-box{
+  position: relative;
+  width: 80vw;
+  height: 10vh;
+  background: #1D1D1F;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+.bio-box-textbox{
+  width: 68vw;
+  padding: 1vh;
+  overflow: auto;
+}
+.bio-box:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 5vh solid #303133;
+    border-bottom: 5vh solid #303133;
+    border-left: 3vh solid transparent;
+    width: 0;
+}
+.bio-box:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    border-top: 5vh solid #303133;
+    border-bottom: 5vh solid #303133;
+    border-right: 3vh solid transparent;
+    width: 0;
+}
+.codewars-stats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .codewars-summary-stats{
   width: 100%;
 }
