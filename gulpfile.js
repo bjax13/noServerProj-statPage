@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     //uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     print = require('gulp-print'),
+
     babel = require('gulp-babel');
     //babel-preset-es2015
 
