@@ -20,14 +20,6 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
-angular.module('statApp').service('mainSvc', function () {});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -94,6 +86,42 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 
     return defer.promise;
   };
+});
+'use strict';
+
+angular.module('statApp').service('mainSvc', function () {});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
+angular.module('statApp').directive('topMenu', function () {
+    return {
+        restrict: 'AE',
+        template: '<div> {{name}} The current time is {{time | date: "shortTime"}} </div>',
+        scope: {
+            name: '='
+        },
+        link: function link(scope, element, attrs) {
+            var currentTime = new Date();
+            scope.time = currentTime;
+
+            $header = $('.header__fake');
+
+            $(window).scroll(function () {
+
+                var scroll = $(window).scrollTop();
+
+                if (scroll > 20) {
+                    $header.addClass('animated').removeClass('fix');
+                } else {
+                    $header.removeClass('animated').addClass('fix');
+                }
+            });
+        }
+    };
 });
 'use strict';
 
