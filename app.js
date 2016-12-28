@@ -1,4 +1,4 @@
-angular.module('statApp',['ui.router'])
+angular.module('statApp',['ui.router','ngAnimate'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');

@@ -21,7 +21,6 @@ angular.module('statApp')
                 //     } else {
                 //         $header.removeClass('animated').addClass('fix');
                 //     }
-                //
                 // });
             }
         }

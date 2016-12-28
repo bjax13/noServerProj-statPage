@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('statApp', ['ui.router', 'ngAnimate']).config(function ($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 
@@ -17,6 +17,39 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
     templateUrl: 'pages/teamStat/teamStat.html',
     controller: 'teamStatCtrl'
   });
+});
+'use strict';
+
+angular.module('statApp').directive('topMenu', function () {
+    return {
+        restrict: 'AE',
+        templateUrl: "pages/directives/templets/topMenu.html",
+        scope: {
+            name: '='
+        },
+        link: function link(scope, element, attrs) {
+            var currentTime = new Date();
+            scope.time = currentTime;
+
+            // $header = $('.header__fake');
+            //
+            // $(window).scroll(function() {
+            //
+            //     var scroll = $(window).scrollTop();
+            //
+            //     if (scroll > 20) {
+            //         $header.addClass('animated').removeClass('fix');
+            //     } else {
+            //         $header.removeClass('animated').addClass('fix');
+            //     }
+            // });
+        }
+    };
+});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 
@@ -90,39 +123,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 'use strict';
 
 angular.module('statApp').service('mainSvc', function () {});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
-angular.module('statApp').directive('topMenu', function () {
-    return {
-        restrict: 'AE',
-        template: '<div> {{name}} The current time is {{time | date: "shortTime"}} </div>',
-        scope: {
-            name: '='
-        },
-        link: function link(scope, element, attrs) {
-            var currentTime = new Date();
-            scope.time = currentTime;
-
-            $header = $('.header__fake');
-
-            $(window).scroll(function () {
-
-                var scroll = $(window).scrollTop();
-
-                if (scroll > 20) {
-                    $header.addClass('animated').removeClass('fix');
-                } else {
-                    $header.removeClass('animated').addClass('fix');
-                }
-            });
-        }
-    };
-});
 'use strict';
 
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
