@@ -227,6 +227,12 @@ body {
   font-weight: lighter;
   letter-spacing: 1px; }
 
+.scroll-debug {
+  position: fixed;
+  background: blue;
+  bottom: 10px;
+  right: 10px; }
+
 .content {
   width: 320px;
   position: relative;

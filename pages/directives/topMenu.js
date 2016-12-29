@@ -7,8 +7,6 @@ angular.module('statApp')
                 name: '='
             },
             link: function(scope, element, attrs) {
-                var currentTime = new Date();
-                scope.time = currentTime
 
                 var $header = $('.header__fake');
 

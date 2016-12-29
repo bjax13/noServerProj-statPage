@@ -20,6 +20,25 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
+angular.module('statApp').directive('scrollPosition', function ($window) {
+  return {
+    scope: {
+      scroll: '=scrollPosition'
+    },
+    link: function link(scope, element, attrs) {
+      var windowEl = angular.element($window);
+
+      var handler = function handler() {
+        console.log(window.scrollY);
+        scope.scroll = window.scrollY;
+      };
+      windowEl.on('scroll', scope.$apply.bind(scope, handler));
+      handler();
+    }
+  };
+});
+'use strict';
+
 angular.module('statApp').directive('topMenu', function () {
     return {
         restrict: 'AE',
@@ -28,8 +47,6 @@ angular.module('statApp').directive('topMenu', function () {
             name: '='
         },
         link: function link(scope, element, attrs) {
-            var currentTime = new Date();
-            scope.time = currentTime;
 
             var $header = $('.header__fake');
 
@@ -45,6 +62,33 @@ angular.module('statApp').directive('topMenu', function () {
             });
         }
     };
+});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+
+      $scope.gitInfo("bjax13");
+      $scope.soloUserCodeWars = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+
+    githubSvc.gitInfo(user).then(function (response) {
+      console.log(response);
+      $scope.soloUserGit = response;
+    });
+  };
+
+  $scope.coderInfo();
 });
 'use strict';
 
@@ -120,39 +164,13 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-
-      $scope.gitInfo("bjax13");
-      $scope.soloUserCodeWars = response;
-    });
-  };
-  $scope.gitInfo = function (user) {
-
-    githubSvc.gitInfo(user).then(function (response) {
-      console.log(response);
-      $scope.soloUserGit = response;
-    });
-  };
-
-  $scope.coderInfo();
-});
-'use strict';
-
 angular.module('statApp').controller('teamStatCtrl', function ($scope) {
   $scope.test = "It is alive!!";
 });
 'use strict';
 
 angular.module('statApp').controller('mainCtrl', function ($scope, mainSvc) {
+  $scope.scroll = 0;
 
   $scope.displayNav = false;
 
