@@ -43,8 +43,10 @@ angular.module('statApp').directive('topMenu', function () {
     return {
         restrict: 'AE',
         templateUrl: "pages/directives/templets/topMenu.html",
+        controller: 'mainCtrl',
         scope: {
             name: '='
+
         },
         link: function link(scope, element, attrs) {
 
@@ -67,28 +69,6 @@ angular.module('statApp').directive('topMenu', function () {
 
 angular.module('statApp').controller('homeCtrl', function ($scope) {
   $scope.test = "It is alive!!";
-});
-'use strict';
-
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-
-      $scope.gitInfo("bjax13");
-      $scope.soloUserCodeWars = response;
-    });
-  };
-  $scope.gitInfo = function (user) {
-
-    githubSvc.gitInfo(user).then(function (response) {
-      console.log(response);
-      $scope.soloUserGit = response;
-    });
-  };
-
-  $scope.coderInfo();
 });
 'use strict';
 
@@ -162,6 +142,28 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 'use strict';
 
 angular.module('statApp').service('mainSvc', function () {});
+'use strict';
+
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+
+      $scope.gitInfo("bjax13");
+      $scope.soloUserCodeWars = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+
+    githubSvc.gitInfo(user).then(function (response) {
+      console.log(response);
+      $scope.soloUserGit = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
 'use strict';
 
 angular.module('statApp').controller('teamStatCtrl', function ($scope) {

@@ -3,8 +3,10 @@ angular.module('statApp')
         return {
             restrict: 'AE',
             templateUrl: "pages/directives/templets/topMenu.html",
+            controller: 'mainCtrl',
             scope: {
-                name: '='
+                name: '=',
+        
             },
             link: function(scope, element, attrs) {
 
