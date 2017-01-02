@@ -142,6 +142,81 @@ nav {
 .select-box img {
   width: 100%; }
 
+.main-solo-stat {
+  width: 100%;
+  height: 90vh; }
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.profile-img img {
+  border-radius: 15px; }
+
+.upperCase {
+  text-transform: uppercase; }
+
+.bio-box {
+  position: relative;
+  width: 80vw;
+  height: 10vh;
+  background: #1D1D1F;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  overflow: auto; }
+
+.bio-box-textbox {
+  width: 68vw;
+  padding: 1vh;
+  overflow: auto; }
+
+.bio-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 5vh solid #303133;
+  border-bottom: 5vh solid #303133;
+  border-left: 3vh solid transparent;
+  width: 0; }
+
+.bio-box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 5vh solid #303133;
+  border-bottom: 5vh solid #303133;
+  border-right: 3vh solid transparent;
+  width: 0; }
+
+.codewars-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.codewars-summary-stats {
+  width: 100%; }
+
+.codewars-summary-stats img {
+  width: 100%; }
+
+.gitHub-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.gitHub-summary-stats {
+  width: 80vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; }
+
 .main-team-stat {
   height: 20vh;
   display: flex;
@@ -379,81 +454,6 @@ nav {
     transform: translateX(2px); }
   100% {
     transform: translateX(-2px); } }
-
-.main-solo-stat {
-  width: 100%;
-  height: 90vh; }
-
-.user-info {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center; }
-
-.profile-img img {
-  border-radius: 15px; }
-
-.upperCase {
-  text-transform: uppercase; }
-
-.bio-box {
-  position: relative;
-  width: 80vw;
-  height: 10vh;
-  background: #1D1D1F;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  overflow: auto; }
-
-.bio-box-textbox {
-  width: 68vw;
-  padding: 1vh;
-  overflow: auto; }
-
-.bio-box:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-top: 5vh solid #303133;
-  border-bottom: 5vh solid #303133;
-  border-left: 3vh solid transparent;
-  width: 0; }
-
-.bio-box:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-top: 5vh solid #303133;
-  border-bottom: 5vh solid #303133;
-  border-right: 3vh solid transparent;
-  width: 0; }
-
-.codewars-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
-
-.codewars-summary-stats {
-  width: 100%; }
-
-.codewars-summary-stats img {
-  width: 100%; }
-
-.gitHub-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
-
-.gitHub-summary-stats {
-  width: 80vw;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-end; }
 
 /*body {
   background: #02021a url("https://raw.githubusercontent.com/balajmarius/hamburger-animation/master/assets/img/bg.jpg") no-repeat 0 0;
