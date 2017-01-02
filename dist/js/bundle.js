@@ -20,11 +20,6 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
-'use strict';
-
 angular.module('statApp').directive('scrollPosition', function ($window) {
   return {
     scope: {
@@ -69,6 +64,11 @@ angular.module('statApp').directive('topMenu', function () {
             });
         }
     };
+});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 
@@ -171,7 +171,7 @@ angular.module('statApp').controller('teamStatCtrl', function ($scope) {
 });
 'use strict';
 
-angular.module('statApp').controller('mainCtrl', function ($scope, mainSvc) {
+angular.module('statApp').controller('mainCtrl', function ($scope, $location, mainSvc) {
   $scope.scroll = 0;
 
   $scope.displayNav = false;
@@ -179,5 +179,8 @@ angular.module('statApp').controller('mainCtrl', function ($scope, mainSvc) {
   $scope.toggleNav = function () {
     $scope.displayNav = !$scope.displayNav;
   };
+
+  $scope.currentPage = $location.absUrl();
+  console.log($scope.currentPage);
 });
 //# sourceMappingURL=bundle.js.map
