@@ -9,7 +9,9 @@ angular.module('statApp')
     }
 
     $scope.changePage = function () {
-      $scope.currentPage = $location.url();
+      $scope.currentPage = $location.url().slice(1);
+      console.log($scope.currentPage);
+      $scope.currentPage = $scope.currentPage.slice(1);
       console.log($scope.currentPage);
     }
     $scope.changePage();
