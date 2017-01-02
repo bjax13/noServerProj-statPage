@@ -8,8 +8,10 @@ angular.module('statApp')
       $scope.displayNav = !$scope.displayNav;
     }
 
-
-    $scope.currentPage = $location.url();
-    console.log($scope.currentPage);
+    $scope.changePage = function () {
+      $scope.currentPage = $location.url();
+      console.log($scope.currentPage);
+    }
+    $scope.changePage();
 
   })
