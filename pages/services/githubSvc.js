@@ -20,7 +20,8 @@ angular.module('statApp')
           gitApiUrl: response.data.items[0].url,
           login: response.data.items[0].login,
           gitProfileLink: response.data.items[0].html_url,
-          gitSummaryImg: "http://ghchart.rshah.org/" + response.data.items[0].login,
+          gitSummaryImg: "http://ghchart.rshah.org/B92F21/" + response.data.items[0].login,
+          // <img src="http://ghchart.rshah.org/409ba5/2016rshah" alt="2016rshah's Blue Github Chart" />
 
         }
 
