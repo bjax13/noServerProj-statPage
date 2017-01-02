@@ -6,7 +6,7 @@ angular.module('statApp')
             controller: 'mainCtrl',
             scope: {
                 name: '=',
-        
+
             },
             link: function(scope, element, attrs) {
 

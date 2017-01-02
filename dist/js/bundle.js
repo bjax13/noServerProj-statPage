@@ -171,7 +171,7 @@ angular.module('statApp').controller('teamStatCtrl', function ($scope) {
 });
 'use strict';
 
-angular.module('statApp').controller('mainCtrl', function ($scope, $location, mainSvc) {
+angular.module('statApp').controller('mainCtrl', function ($scope, $location, $rootScope, mainSvc) {
   $scope.scroll = 0;
 
   $scope.displayNav = false;
@@ -183,7 +183,12 @@ angular.module('statApp').controller('mainCtrl', function ($scope, $location, ma
   $scope.changePage = function () {
     $scope.currentPage = $location.url().slice(1);
     console.log($scope.currentPage);
+    console.log($scope);
   };
   $scope.changePage();
+
+  $rootScope.$on("$stateChangeSuccess", function () {
+    $scope.changePage();
+  });
 });
 //# sourceMappingURL=bundle.js.map
