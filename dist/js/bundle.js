@@ -72,28 +72,6 @@ angular.module('statApp').directive('topMenu', function () {
 });
 'use strict';
 
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-
-      $scope.gitInfo("bjax13");
-      $scope.soloUserCodeWars = response;
-    });
-  };
-  $scope.gitInfo = function (user) {
-
-    githubSvc.gitInfo(user).then(function (response) {
-      console.log(response);
-      $scope.soloUserGit = response;
-    });
-  };
-
-  $scope.coderInfo();
-});
-'use strict';
-
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -166,6 +144,28 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+
+      $scope.gitInfo("bjax13");
+      $scope.soloUserCodeWars = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+
+    githubSvc.gitInfo(user).then(function (response) {
+      console.log(response);
+      $scope.soloUserGit = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
+'use strict';
+
 angular.module('statApp').controller('teamStatCtrl', function ($scope) {
   $scope.test = "It is alive!!";
 });
@@ -182,8 +182,6 @@ angular.module('statApp').controller('mainCtrl', function ($scope, $location, ma
 
   $scope.changePage = function () {
     $scope.currentPage = $location.url().slice(1);
-    console.log($scope.currentPage);
-    $scope.currentPage = $scope.currentPage.slice(1);
     console.log($scope.currentPage);
   };
   $scope.changePage();
