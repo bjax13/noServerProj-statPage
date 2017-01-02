@@ -20,6 +20,11 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').directive('scrollPosition', function ($window) {
   return {
     scope: {
@@ -64,11 +69,6 @@ angular.module('statApp').directive('topMenu', function () {
             });
         }
     };
-});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
 });
 'use strict';
 
@@ -144,6 +144,11 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
+angular.module('statApp').controller('teamStatCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
   $scope.test = "It is alive!!";
 
@@ -163,11 +168,6 @@ angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsS
   };
 
   $scope.coderInfo();
-});
-'use strict';
-
-angular.module('statApp').controller('teamStatCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
 });
 'use strict';
 
