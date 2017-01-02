@@ -45,10 +45,11 @@
 
 .content .header__fake {
   position: fixed;
-  top: 15px;
+  top: 2vh;
   /*left: 50%;
   margin-left: -160px;*/
   width: 320px;
+
 }
 
 .content .header__fake i {
@@ -165,8 +166,8 @@
 /*****************Nav animation End**********   */
 
 .ham-nav{
-    height: 90vh;
-    width: 50vw;
+    height: 21vh;
+    width: 86vw;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -174,8 +175,8 @@
     text-align: center;
     background-color: #262729;
     position: fixed;
-    top: auto;
-    right: 10vw;
+    top: 10vh;
+    /*right: 0;*/
     z-index: 100;
     opacity: .9;
 }

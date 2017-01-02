@@ -1,5 +1,5 @@
 .main-team-stat{
-  height: 20vh;
+  /*height: 20vh;*/
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -33,9 +33,9 @@
 .newcharacter404 {
   width: 400px;
   height: 800px;
-  left: 50%;
-  top: 40vh;
-  margin-left: -200px;
+  /*left: 50%;*/
+  /*top: 40vh;*/
+  /*margin-left: -200px;*/
 }
 
 $swayspeed: 20s;

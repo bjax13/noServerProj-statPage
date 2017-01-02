@@ -35,7 +35,7 @@
     position: absolute;
     top: 0; right: 0;
     border-top: 5vh solid #303133;
-    border-bottom: 5vh solid #303133;
+    border-bottom: 5.1vh solid #303133;
     border-left: 3vh solid transparent;
     width: 0;
 }
@@ -44,7 +44,7 @@
     position: absolute;
     top: 0; left: 0;
     border-top: 5vh solid #303133;
-    border-bottom: 5vh solid #303133;
+    border-bottom: 5.1vh solid #303133;
     border-right: 3vh solid transparent;
     width: 0;
 }

@@ -2,7 +2,7 @@ angular.module('statApp')
   .controller('mainCtrl', function ($scope, $location,$rootScope, mainSvc) {
     $scope.scroll = 0;
 
-    $scope.displayNav = true;
+    $scope.displayNav = false;
 
     $scope.toggleNav = function () {
       $scope.displayNav = !$scope.displayNav;
