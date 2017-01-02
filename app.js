@@ -1,12 +1,13 @@
 angular.module('statApp',['ui.router'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
+
 
 
   $stateProvider
     .state('home',{
-      url: '/',
+      url: '/home',
       templateUrl: 'pages/home/home.html',
       controller: 'homeCtrl'
     })

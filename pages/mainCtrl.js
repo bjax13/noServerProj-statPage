@@ -9,7 +9,7 @@ angular.module('statApp')
     }
 
 
-    $scope.currentPage = $location.absUrl();
+    $scope.currentPage = $location.url();
     console.log($scope.currentPage);
 
   })

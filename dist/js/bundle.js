@@ -2,10 +2,10 @@
 
 angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider.state('home', {
-    url: '/',
+    url: '/home',
     templateUrl: 'pages/home/home.html',
     controller: 'homeCtrl'
   }).state('soloStat', {
@@ -29,7 +29,7 @@ angular.module('statApp').directive('scrollPosition', function ($window) {
       var windowEl = angular.element($window);
 
       var handler = function handler() {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
         scope.scroll = window.scrollY;
       };
       windowEl.on('scroll', scope.$apply.bind(scope, handler));
@@ -180,7 +180,7 @@ angular.module('statApp').controller('mainCtrl', function ($scope, $location, ma
     $scope.displayNav = !$scope.displayNav;
   };
 
-  $scope.currentPage = $location.absUrl();
+  $scope.currentPage = $location.url();
   console.log($scope.currentPage);
 });
 //# sourceMappingURL=bundle.js.map

@@ -8,7 +8,7 @@ angular.module('statApp')
       var windowEl = angular.element($window);
 
       var handler = function() {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
         scope.scroll = window.scrollY;
       }
       windowEl.on('scroll', scope.$apply.bind(scope, handler));
