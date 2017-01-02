@@ -20,6 +20,11 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
 });
 'use strict';
 
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').directive('scrollPosition', function ($window) {
   return {
     scope: {
@@ -137,11 +142,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 'use strict';
 
 angular.module('statApp').service('mainSvc', function () {});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
 'use strict';
 
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
