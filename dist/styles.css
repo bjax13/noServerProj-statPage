@@ -224,9 +224,9 @@ nav {
   flex-direction: column;
   align-items: center; }
 
-body {
-  background-color: white; }
-
+/*body {
+    background-color: white;
+}*/
 .error404page {
   height: 800px; }
 
@@ -244,7 +244,7 @@ body {
   width: 400px;
   height: 800px;
   left: 50%;
-  top: 20px;
+  top: 40vh;
   margin-left: -200px; }
 
 .torso404 {
@@ -455,20 +455,23 @@ body {
   100% {
     transform: translateX(-2px); } }
 
-body {
+/*body {
   background: #02021a url("https://raw.githubusercontent.com/balajmarius/hamburger-animation/master/assets/img/bg.jpg") no-repeat 0 0;
   -webkit-background-size: 100% auto;
   background-size: 100% auto;
   color: #fff;
   font-family: Helvetica Neue, Helvetica, Open sans, Arial, sans-serif;
-  font-weight: lighter;
-  letter-spacing: 1px; }
-
+  font-weight:lighter;
+  letter-spacing:1px;
+}*/
 .scroll-debug {
   position: fixed;
   background: blue;
   bottom: 10px;
   right: 10px; }
+
+.nav-current-page {
+  text-transform: capitalize; }
 
 .content {
   width: 320px;

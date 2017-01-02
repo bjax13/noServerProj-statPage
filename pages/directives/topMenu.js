@@ -16,7 +16,7 @@ angular.module('statApp')
 
                     var scroll = $(window).scrollTop();
 
-                    if (scroll > 20) {
+                    if (scroll > 15) {
                         $header.addClass('animated').removeClass('fix');
                     } else {
                         $header.removeClass('animated').addClass('fix');

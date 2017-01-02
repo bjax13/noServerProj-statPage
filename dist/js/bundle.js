@@ -9,19 +9,14 @@ angular.module('statApp', ['ui.router']).config(function ($stateProvider, $urlRo
     templateUrl: 'pages/home/home.html',
     controller: 'homeCtrl'
   }).state('soloStat', {
-    url: '/soloStat',
+    url: '/soloStats',
     templateUrl: 'pages/soloStat/soloStat.html',
     controller: 'soloStatCtrl'
   }).state('teamStat', {
-    url: '/teamStat',
+    url: '/teamStats',
     templateUrl: 'pages/teamStat/teamStat.html',
     controller: 'teamStatCtrl'
   });
-});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
 });
 'use strict';
 
@@ -61,7 +56,7 @@ angular.module('statApp').directive('topMenu', function () {
 
                 var scroll = $(window).scrollTop();
 
-                if (scroll > 20) {
+                if (scroll > 15) {
                     $header.addClass('animated').removeClass('fix');
                 } else {
                     $header.removeClass('animated').addClass('fix');
@@ -144,6 +139,11 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 angular.module('statApp').service('mainSvc', function () {});
 'use strict';
 
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
+});
+'use strict';
+
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
   $scope.test = "It is alive!!";
 
@@ -182,8 +182,8 @@ angular.module('statApp').controller('mainCtrl', function ($scope, $location, $r
 
   $scope.changePage = function () {
     $scope.currentPage = $location.url().slice(1);
-    console.log($scope.currentPage);
-    console.log($scope);
+    // console.log($scope.currentPage);
+    // console.log($scope);
   };
   $scope.changePage();
 

@@ -10,8 +10,8 @@ angular.module('statApp')
 
     $scope.changePage = function () {
       $scope.currentPage = $location.url().slice(1);
-      console.log($scope.currentPage);
-      console.log($scope);
+      // console.log($scope.currentPage);
+      // console.log($scope);
 
     }
     $scope.changePage();

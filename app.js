@@ -12,12 +12,12 @@ angular.module('statApp',['ui.router'])
       controller: 'homeCtrl'
     })
     .state('soloStat',{
-      url: '/soloStat',
+      url: '/soloStats',
       templateUrl: 'pages/soloStat/soloStat.html',
       controller: 'soloStatCtrl'
     })
     .state('teamStat',{
-      url: '/teamStat',
+      url: '/teamStats',
       templateUrl: 'pages/teamStat/teamStat.html',
       controller: 'teamStatCtrl'
     })
