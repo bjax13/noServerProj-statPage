@@ -43,8 +43,8 @@
 .content .header__fake {
   position: fixed;
   top: 15px;
-  left: 50%;
-  margin-left: -160px;
+  /*left: 50%;
+  margin-left: -160px;*/
   width: 320px;
 }
 

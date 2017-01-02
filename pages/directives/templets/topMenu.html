@@ -1,26 +1,25 @@
+<div class="content">
+    <span class='scroll-debug' scroll-position="scroll">{{scroll}}</span>
+    <h2 class="nav-current-page">{{currentPage}}</h2>
 
-    <div class="content">
-      <span class='scroll-debug' scroll-position="scroll">{{scroll}}</span>
-        <h2 class="nav-current-page">{{currentPage}}</h2>
+    <div class="header__fake" ng-click="toggleNav()">
 
-        <div class="header__fake"  ng-click="toggleNav()">
-
-            <div class="icn__wrap">
-                <i class="icn__hamburger"></i>
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="58px" height="58px" viewBox="0 0 16 16" preserveAspectRatio="none">
-                    <circle cx="8" cy="8" r="6.215" transform="rotate(90 8 8)"></circle>
-                </svg>
-            </div>
-            <i class="btm__border"></i>
-
+        <div class="icn__wrap">
+            <i class="icn__hamburger"></i>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="58px" height="58px" viewBox="0 0 16 16" preserveAspectRatio="none">
+                <circle cx="8" cy="8" r="6.215" transform="rotate(90 8 8)"></circle>
+            </svg>
         </div>
+        <i class="btm__border"></i>
 
-        <nav class="full-nav" ng-show="displayNav" ng-click="toggleNav()">
-          <h1 ui-sref='home'>Home</h1>
-          <h1 ui-sref='teamStat'>Team</h1>
-          <h1 ui-sref='soloStat'>Solo</h1>
-        </nav>
-        <!-- <nav class="logo-nav" >
+    </div>
+
+    <nav class="full-nav" ng-show="displayNav" ng-click="toggleNav()">
+        <h1 ui-sref='home'>Home</h1>
+        <h1 ui-sref='teamStat'>Team</h1>
+        <h1 ui-sref='soloStat'>Solo</h1>
+    </nav>
+    <!-- <nav class="logo-nav" >
 
           <div class="logo-nav-img">
             <img src="images/Ham.png" alt="stat logo">
@@ -28,7 +27,6 @@
 
         </nav> -->
 
+    <!-- <h1>Tah-da!<span>Now scroll back up.</span></h1> -->
 
-        <!-- <h1>Tah-da!<span>Now scroll back up.</span></h1> -->
-
-    </div>
+</div>

@@ -56,7 +56,7 @@ angular.module('statApp').directive('topMenu', function () {
 
                 var scroll = $(window).scrollTop();
 
-                if (scroll > 15) {
+                if (scroll > 20) {
                     $header.addClass('animated').removeClass('fix');
                 } else {
                     $header.removeClass('animated').addClass('fix');
@@ -64,6 +64,11 @@ angular.module('statApp').directive('topMenu', function () {
             });
         }
     };
+});
+'use strict';
+
+angular.module('statApp').controller('homeCtrl', function ($scope) {
+  $scope.test = "It is alive!!";
 });
 'use strict';
 
@@ -137,11 +142,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 'use strict';
 
 angular.module('statApp').service('mainSvc', function () {});
-'use strict';
-
-angular.module('statApp').controller('homeCtrl', function ($scope) {
-  $scope.test = "It is alive!!";
-});
 'use strict';
 
 angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
