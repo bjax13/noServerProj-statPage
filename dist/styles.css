@@ -241,16 +241,17 @@ body {
 .content h2 {
   margin: 35px 0 0; }
 
-.content h1 {
+/*.content h1 {
   text-align: center;
-  margin: 1000px 0 200px; }
+  margin: 1000px 0 200px;
+}
 
 .content h1 span {
   display: block;
   width: 100%;
   margin: 5px 0 0;
-  opacity: .5; }
-
+  opacity: .5;
+}*/
 .content .header__fake {
   position: fixed;
   top: 15px;
