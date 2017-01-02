@@ -218,9 +218,11 @@ nav {
   justify-content: flex-end; }
 
 .main-team-stat {
+  height: 50vh;
   display: flex;
   justify-content: center;
-  align-content: center; }
+  flex-direction: column;
+  align-items: center; }
 
 body {
   background: #02021a url("https://raw.githubusercontent.com/balajmarius/hamburger-animation/master/assets/img/bg.jpg") no-repeat 0 0;

@@ -1,5 +1,8 @@
 .main-team-stat{
+  height: 50vh;
   display: flex;
   justify-content: center;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
+
 }
