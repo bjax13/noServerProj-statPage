@@ -2,10 +2,10 @@
     <span class='scroll-debug' scroll-position="scroll">{{scroll}}</span>
     <h2 class="nav-current-page">{{currentPage}}</h2>
 
-    <div class="header__fake" ng-click="toggleNav()">
+    <div class="header__fake" >
 
         <div class="icn__wrap">
-            <i class="icn__hamburger"></i>
+            <i class="icn__hamburger" ng-click="toggleNav()"></i>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="58px" height="58px" viewBox="0 0 16 16" preserveAspectRatio="none">
                 <circle cx="8" cy="8" r="6.215" transform="rotate(90 8 8)"></circle>
             </svg>
@@ -14,11 +14,11 @@
 
     </div>
 
-    <nav class="full-nav" ng-show="displayNav" ng-click="toggleNav()">
-        <h1 ui-sref='home'>Home</h1>
-        <h1 ui-sref='teamStat'>Team</h1>
-        <h1 ui-sref='soloStat'>Solo</h1>
+    <nav class="ham-nav" ng-show="displayNav" ng-click="toggleNav()">
+        <h1 ui-sref='home' class="ham-nav-text">Home</h1>
+        <h1 ui-sref='teamStat' class="ham-nav-text">Team</h1>
+        <h1 ui-sref='soloStat' class="ham-nav-text">Solo</h1>
     </nav>
-    
+
 
 </div>

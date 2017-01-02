@@ -18,6 +18,9 @@
 .nav-current-page{
   text-transform: capitalize;
 }
+
+/*****************Nav animation **********   */
+
 .content {
   width: 320px;
   position: relative;
@@ -157,4 +160,25 @@
   to {
     right: 0px;
   }
+}
+
+/*****************Nav animation End**********   */
+
+.ham-nav{
+    height: 90vh;
+    width: 50vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content:flex-end;
+    text-align: center;
+    background-color: #262729;
+    position: fixed;
+    top: auto;
+    right: 10vw;
+    z-index: 100;
+    opacity: .9;
+}
+.ham-nav-text{
+  border-bottom: solid white 1px;
 }

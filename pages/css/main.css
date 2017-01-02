@@ -52,13 +52,7 @@ nav{
   height: 10vh;
 
 }
-.full-nav{
-  display: flex;
-  justify-content: space-around;;
-  align-items: center;
-  text-align: center;
-  background-color: #262729;
-}
+
 .logo-nav{
   padding: 1vh;
   display: flex;
