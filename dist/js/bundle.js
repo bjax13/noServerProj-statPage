@@ -72,28 +72,6 @@ angular.module('statApp').directive('topMenu', function () {
 });
 'use strict';
 
-angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
-  $scope.test = "It is alive!!";
-
-  $scope.coderInfo = function () {
-    codewarsSvc.coderInfo().then(function (response) {
-
-      $scope.gitInfo("bjax13");
-      $scope.soloUserCodeWars = response;
-    });
-  };
-  $scope.gitInfo = function (user) {
-
-    githubSvc.gitInfo(user).then(function (response) {
-      console.log(response);
-      $scope.soloUserGit = response;
-    });
-  };
-
-  $scope.coderInfo();
-});
-'use strict';
-
 angular.module('statApp').service('codewarsSvc', function ($http, $q) {
 
   this.coderInfo = function () {
@@ -103,7 +81,7 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
       url: 'https://www.codewars.com/api/v1/users/bjack13'
       // DA2K-3FnsohzhzAp7xvQ codewars auth key
     }).then(function (response) {
-      console.log(response);
+      console.log(response.data);
 
       var dataObj = {
         userName: response.data.username,
@@ -115,6 +93,11 @@ angular.module('statApp').service('codewarsSvc', function ($http, $q) {
         skills: response.data.skills,
         challangeCompleted: response.data.codeChallenges.totalCompleted
       };
+      console.log(dataObj.overallRank);
+
+      if (dataObj.leaderboardPosition > 999) {
+        dataObj.leaderboardPosition = dataObj.leaderboardPosition.toString().slice(0, 2) + "," + dataObj.leaderboardPosition.toString().slice(2);
+      }
 
       if (dataObj.skills === null) {
         dataObj.skills = 'No skills displayed on CodeWars.com';
@@ -144,7 +127,6 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
       url: 'https://api.github.com/search/users?q=' + user + '+in:%3Elogin'
       // DA2K-3FnsohzhzAp7xvQ codewars auth key
     }).then(function (response) {
-      console.log(response.data.items[0]);
 
       var dataObj = {
         avatarUrl: response.data.items[0].avatar_url,
@@ -163,6 +145,28 @@ angular.module('statApp').service('githubSvc', function ($http, $q) {
 'use strict';
 
 angular.module('statApp').service('mainSvc', function () {});
+'use strict';
+
+angular.module('statApp').controller('soloStatCtrl', function ($scope, codewarsSvc, githubSvc) {
+  $scope.test = "It is alive!!";
+
+  $scope.coderInfo = function () {
+    codewarsSvc.coderInfo().then(function (response) {
+
+      $scope.gitInfo("bjax13");
+      $scope.soloUserCodeWars = response;
+    });
+  };
+  $scope.gitInfo = function (user) {
+
+    githubSvc.gitInfo(user).then(function (response) {
+
+      $scope.soloUserGit = response;
+    });
+  };
+
+  $scope.coderInfo();
+});
 'use strict';
 
 angular.module('statApp').controller('teamStatCtrl', function ($scope) {

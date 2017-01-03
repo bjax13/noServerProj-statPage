@@ -8,7 +8,7 @@ angular.module('statApp')
         url: 'https://www.codewars.com/api/v1/users/bjack13'
         // DA2K-3FnsohzhzAp7xvQ codewars auth key
       }).then(function (response) {
-        console.log(response);
+        console.log(response.data);
 
         var dataObj = {
           userName: response.data.username,
@@ -19,6 +19,11 @@ angular.module('statApp')
           overallRank: response.data.ranks.overall,
           skills: response.data.skills,
           challangeCompleted: response.data.codeChallenges.totalCompleted,
+        }
+        console.log(dataObj.overallRank);
+
+        if (dataObj.leaderboardPosition>999) {
+          dataObj.leaderboardPosition = dataObj.leaderboardPosition.toString().slice(0,2) +"," + dataObj.leaderboardPosition.toString().slice(2);
         }
 
         if (dataObj.skills === null) {

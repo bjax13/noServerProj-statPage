@@ -12,7 +12,7 @@ angular.module('statApp')
     $scope.gitInfo = function (user) {
 
       githubSvc.gitInfo(user).then(function (response) {
-        console.log(response);
+        
         $scope.soloUserGit = response;
       })
     }
